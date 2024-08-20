@@ -26,7 +26,7 @@ const client = new MongoClient(uri, {
 //         // Connect the client to the server (optional starting in v4.7)
 
 
-//         const booksCollection = client.db('BookBeacon').collection('Books')
+        const booksCollection = client.db('BookBeacon').collection('Books')
 
 //         // Endpoint to count books based on category/type
 //         app.get('/countBooks', async (req, res) => {
