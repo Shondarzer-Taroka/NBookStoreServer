@@ -151,10 +151,10 @@ const client = new MongoClient(uri, {
 // }
 // run().catch(console.dir);
 
-// app.get('/', (req, res) => {
-//     res.send('books store')
-// })
+app.get('/', (req, res) => {
+    res.send('books store')
+})
 
-// app.listen(port, () => {
-//     console.log(`Server is running on port ${port}`);
-// });
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
