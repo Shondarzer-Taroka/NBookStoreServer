@@ -76,69 +76,69 @@ const client = new MongoClient(uri, {
 
 
 
-//         // Endpoint to get books with pagination and filtering by category/type
-//         app.get('/books', async (req, res) => {
-//             const { skip = 0, limit = 10, search, category, sort, publication, minPrice, maxPrice } = req.query;
-//             const skipNum = parseInt(skip);
-//             const limitNum = parseInt(limit);
-//             const minPriceNum = parseInt(minPrice);
-//             const maxPriceNum = parseInt(maxPrice)
+        // Endpoint to get books with pagination and filtering by category/type
+        app.get('/books', async (req, res) => {
+            const { skip = 0, limit = 10, search, category, sort, publication, minPrice, maxPrice } = req.query;
+            const skipNum = parseInt(skip);
+            // const limitNum = parseInt(limit);
+            // const minPriceNum = parseInt(minPrice);
+            // const maxPriceNum = parseInt(maxPrice)
 
-//             // Initialize query object
-//             const query = {};
-//             console.log(minPriceNum);
+            // // Initialize query object
+            // const query = {};
+            // console.log(minPriceNum);
 
-//             if (minPriceNum !== "undefined" && maxPriceNum !== "undefined") {
-//                 query.price = { $gte: minPriceNum, $lte: maxPriceNum };
-//             }
+            // if (minPriceNum !== "undefined" && maxPriceNum !== "undefined") {
+            //     query.price = { $gte: minPriceNum, $lte: maxPriceNum };
+            // }
 
-//             // Add category filter if provided
+            // Add category filter if provided
 
-//             if (publication) {
-//                 query.publication = publication
-//             }
-//             if (category) {
-//                 query.category = category;
-//             }
+            // if (publication) {
+            //     query.publication = publication
+            // }
+            // if (category) {
+            //     query.category = category;
+            // }
 
-//             // Add search filter if provided
-//             if (search) {
-//                 const searchRegex = new RegExp(search, 'i'); // 'i' for case-insensitive search
-//                 query.$or = [
-//                     { title: searchRegex },
-//                     { author: searchRegex }
-//                 ];
-//             }
+            // // Add search filter if provided
+            // if (search) {
+            //     const searchRegex = new RegExp(search, 'i'); // 'i' for case-insensitive search
+            //     query.$or = [
+            //         { title: searchRegex },
+            //         { author: searchRegex }
+            //     ];
+            // }
 
-//             try {
-//                 // Initialize sorting object
-//                 const sortOptions = {};
+            // try {
+            //     // Initialize sorting object
+            //     const sortOptions = {};
 
-//                 // Add sorting based on the sort query parameter
-//                 if (sort) {
-//                     if (sort === "priceLow") {
-//                         sortOptions.price = 1; // Sort by price in ascending order (low to high)
-//                     } else if (sort === "priceHigh") {
-//                         sortOptions.price = -1; // Sort by price in descending order (high to low)
-//                     } else if (sort === "newestDate") {
-//                         sortOptions.publicationDate = -1; // Sort by publication date in descending order (new to old)
-//                     } else if (sort === "oldestDate") {
-//                         sortOptions.publicationDate = 1; // Sort by publication date in ascending order (old to new)
-//                     }
-//                 }
+            //     // Add sorting based on the sort query parameter
+            //     if (sort) {
+            //         if (sort === "priceLow") {
+            //             sortOptions.price = 1; // Sort by price in ascending order (low to high)
+            //         } else if (sort === "priceHigh") {
+            //             sortOptions.price = -1; // Sort by price in descending order (high to low)
+            //         } else if (sort === "newestDate") {
+            //             sortOptions.publicationDate = -1; // Sort by publication date in descending order (new to old)
+            //         } else if (sort === "oldestDate") {
+            //             sortOptions.publicationDate = 1; // Sort by publication date in ascending order (old to new)
+            //         }
+            //     }
 
-//                 const result = await booksCollection.find(query)
-//                     .sort(sortOptions)
-//                     .skip(skipNum)
-//                     .limit(limitNum)
-//                     .toArray();
+            //     const result = await booksCollection.find(query)
+            //         .sort(sortOptions)
+            //         .skip(skipNum)
+            //         .limit(limitNum)
+            //         .toArray();
 
-//                 res.send(result);
-//             } catch (error) {
-//                 console.error("Error fetching books:", error);
-//                 res.status(500).json({ message: 'Failed to fetch books', error });
-//             }
-//         });
+            //     res.send(result);
+            // } catch (error) {
+            //     console.error("Error fetching books:", error);
+            //     res.status(500).json({ message: 'Failed to fetch books', error });
+            // }
+        });
 
 
 //         // Send a ping to confirm a successful connection
