@@ -80,17 +80,17 @@ const client = new MongoClient(uri, {
         app.get('/books', async (req, res) => {
             const { skip = 0, limit = 10, search, category, sort, publication, minPrice, maxPrice } = req.query;
             const skipNum = parseInt(skip);
-            // const limitNum = parseInt(limit);
-            // const minPriceNum = parseInt(minPrice);
-            // const maxPriceNum = parseInt(maxPrice)
+            const limitNum = parseInt(limit);
+            const minPriceNum = parseInt(minPrice);
+            const maxPriceNum = parseInt(maxPrice)
 
-            // // Initialize query object
-            // const query = {};
-            // console.log(minPriceNum);
+            // Initialize query object
+            const query = {};
+            console.log(minPriceNum);
 
-            // if (minPriceNum !== "undefined" && maxPriceNum !== "undefined") {
-            //     query.price = { $gte: minPriceNum, $lte: maxPriceNum };
-            // }
+            if (minPriceNum !== "undefined" && maxPriceNum !== "undefined") {
+                query.price = { $gte: minPriceNum, $lte: maxPriceNum };
+            }
 
             // Add category filter if provided
 
