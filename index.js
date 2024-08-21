@@ -28,51 +28,51 @@ async function run() {
 
         const booksCollection = client.db('BookBeacon').collection('Books')
 
-//         // Endpoint to count books based on category/type
-//         app.get('/countBooks', async (req, res) => {
-//             const { category, search, publication, minPrice, maxPrice } = req.query;
+        // Endpoint to count books based on category/type
+        app.get('/countBooks', async (req, res) => {
+            const { category, search, publication, minPrice, maxPrice } = req.query;
 
-//             // Initialize query object
-//             const minPriceNum = parseInt(minPrice);
-//             const maxPriceNum = parseInt(maxPrice)
+            // Initialize query object
+            const minPriceNum = parseInt(minPrice);
+            const maxPriceNum = parseInt(maxPrice)
 
-//             // Initialize query object
-//             const query = {};
-//             console.log(minPriceNum);
+            // Initialize query object
+            const query = {};
+            console.log(minPriceNum);
 
-//             if (minPriceNum !== "undefined" && maxPriceNum !== "undefined") {
-//                 query.price = { $gte: minPriceNum, $lte: maxPriceNum };
-//             }
+            if (minPriceNum !== "undefined" && maxPriceNum !== "undefined") {
+                query.price = { $gte: minPriceNum, $lte: maxPriceNum };
+            }
 
 
 
-//             if (publication) {
-//                 query.publication = publication
-//             }
+            if (publication) {
+                query.publication = publication
+            }
 
-//             // Add category filter if provided
-//             if (category) {
-//                 query.category = category;
-//             }
+            // Add category filter if provided
+            if (category) {
+                query.category = category;
+            }
 
-//             // Add search filter if provided
-//             if (search) {
-//                 const searchRegex = new RegExp(search, 'i'); // 'i' for case-insensitive search
-//                 query.$or = [
-//                     { title: searchRegex },
-//                     { author: searchRegex }
-//                 ];
-//             }
+            // Add search filter if provided
+            // if (search) {
+            //     const searchRegex = new RegExp(search, 'i'); // 'i' for case-insensitive search
+            //     query.$or = [
+            //         { title: searchRegex },
+            //         { author: searchRegex }
+            //     ];
+            // }
 
-//             try {
-//                 // Count the documents based on the constructed query
-//                 const count = await booksCollection.countDocuments(query);
-//                 res.send({ count });
-//             } catch (error) {
-//                 console.error("Error counting books documents:", error);
-//                 res.status(500).json({ message: 'Failed to count books documents', error });
-//             }
-//         });
+            try {
+                // Count the documents based on the constructed query
+                const count = await booksCollection.countDocuments(query);
+                res.send({ count });
+            } catch (error) {
+                console.error("Error counting books documents:", error);
+                res.status(500).json({ message: 'Failed to count books documents', error });
+            }
+        });
 
 
 
