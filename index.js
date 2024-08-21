@@ -56,13 +56,13 @@ async function run() {
             }
 
             // Add search filter if provided
-            // if (search) {
-            //     const searchRegex = new RegExp(search, 'i'); // 'i' for case-insensitive search
-            //     query.$or = [
-            //         { title: searchRegex },
-            //         { author: searchRegex }
-            //     ];
-            // }
+            if (search) {
+                const searchRegex = new RegExp(search, 'i'); // 'i' for case-insensitive search
+                query.$or = [
+                    { title: searchRegex },
+                    { author: searchRegex }
+                ];
+            }
 
             try {
                 // Count the documents based on the constructed query
