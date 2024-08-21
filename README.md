@@ -1,11 +1,11 @@
-# Book Beacon Server
+# NbookStore
 
-[Live Link](https://book-beacon-188a6.web.app/)  
-[Client Side Repo](https://github.com/rakib3719/book-beacon-client-side)
+[Live Link](https://nbookstore-889b8.web.app)  
+[Client Side Repo](https://github.com/Shondarzer-Taroka/NBookStoreServer)
 
 ## Project Overview
 
-This is the server-side code for **Book Beacon**, a single-page React application for an online bookshop. The server is built with Express.js and MongoDB, and it provides endpoints for managing and retrieving book data. This project uses modern technologies such as environment variables for configuration, CORS for cross-origin resource sharing, and MongoDB for database operations.
+This is the server-side code for **NBookStore**, a single-page React application for an online bookshop. The server is built with Express.js and MongoDB, and it provides endpoints for managing and retrieving book data. This project uses modern technologies such as environment variables for configuration, CORS for cross-origin resource sharing, and MongoDB for database operations.
 
 ### Key Features
 
@@ -28,7 +28,7 @@ Ensure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/rakib3719/book-beacon-server-side
+   git clone https://github.com/Shondarzer-Taroka/NBookStoreServer
    cd book-beacon-server-side
    npm install
 
